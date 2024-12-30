@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.hero-gradient {
-	background: radial-gradient(red, black 70%);
-	opacity: 70%;
+body {
+  overflow-x: hidden;
 }
 
 @font-face {
