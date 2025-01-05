@@ -1,7 +1,11 @@
+
+import Crew from '../sections/Crew'; // Adjust the path as necessary
+
 export default function Home() {
   return (
     <div>
-      <h1>Home page</h1>
+      <Crew />
     </div>
   );
 }
+
