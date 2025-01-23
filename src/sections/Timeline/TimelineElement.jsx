@@ -77,8 +77,8 @@ const Timeline = ({ timelineData }) => {
               {/* Connector Dot - Fixed Left-Side Icon Position */}
               <div
                 className={`absolute top-1/2 w-10 h-10 bg-red-500 rounded-full border-4 border-white 
-                  ${index % 2 === 0 ? "lg:-right-5 md:-right-5 sm:-right-5" : "lg:-left-5 md:-left-5 sm:-left-5"} 
-                  transform -translate-y-1/2 flex items-center justify-center`}
+                  ${index % 2 === 0 ? "sm:-left-5 lg:-right-5 md:-right-5 " : "sm:-left-5 lg:-left-5 md:-left-5 "} 
+                  transform -translate-y-1/2 flex items-center justify-center `}
               >
                 <FaRegCalendarAlt className="text-white" />
               </div>

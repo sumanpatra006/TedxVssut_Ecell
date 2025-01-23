@@ -1,57 +1,64 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 
 const crewMembers = [
   {
-    name: 'Aruh Mehtah',
-    role: 'Organising Team',
-    description: 'Organizing TEDxVSSUT was an inspiring journey! From coordinating speakers to perfecting details, it was a rewarding experience of teamwork, creativity, and bringing impactful ideas to life.',
-    image: '/images/img.jpg'
+    name: "Aruh Mehtah",
+    role: "Organising Team",
+    description:
+      "Organizing TEDxVSSUT was an inspiring journey! From coordinating speakers to perfecting details, it was a rewarding experience of teamwork, creativity, and bringing impactful ideas to life.",
+    image: "/images/img.jpg",
   },
   {
-    name: 'Jane Smith',
-    role: 'Speaker',
-    description: 'Jane is a seasoned speaker known for her insightful talks on innovation and creativity.',
-    image: '/images/img.jpg'
+    name: "Jane Smith",
+    role: "Speaker",
+    description:
+      "Jane is a seasoned speaker known for her insightful talks on innovation and creativity.",
+    image: "/images/img.jpg",
   },
   {
-    name: 'John Doe',
-    role: 'Technical Lead',
-    description: 'John oversees all technical aspects of the event, ensuring everything runs smoothly.',
-    image: '/images/img.jpg'
+    name: "John Doe",
+    role: "Technical Lead",
+    description:
+      "John oversees all technical aspects of the event, ensuring everything runs smoothly.",
+    image: "/images/img.jpg",
   },
   {
-    name: 'Emily Johnson',
-    role: 'Marketing Director',
-    description: 'Emily leads the marketing team, crafting strategies to spread the word about our event.',
-    image: '/images/img.jpg'
+    name: "Emily Johnson",
+    role: "Marketing Director",
+    description:
+      "Emily leads the marketing team, crafting strategies to spread the word about our event.",
+    image: "/images/img.jpg",
   },
   {
-    name: 'Michael Brown',
-    role: 'Logistics Coordinator',
-    description: 'Michael manages all the logistics, making sure everything is in place for a successful event.',
-    image: '/images/img.jpg'
+    name: "Michael Brown",
+    role: "Logistics Coordinator",
+    description:
+      "Michael manages all the logistics, making sure everything is in place for a successful event.",
+    image: "/images/img.jpg",
   },
   {
-    name: 'Sophia Williams',
-    role: 'Creative Director',
-    description: 'Sophia oversees the creative aspects, ensuring the event is visually stunning and engaging.',
-    image: '/images/img.jpg'
+    name: "Sophia Williams",
+    role: "Creative Director",
+    description:
+      "Sophia oversees the creative aspects, ensuring the event is visually stunning and engaging.",
+    image: "/images/img.jpg",
   },
   {
-    name: 'Paul Adams',
-    role: 'Event Planner',
-    description: 'Paul handles the event planning and scheduling, making sure everything runs on time.',
-    image: '/images/img.jpg'
+    name: "Paul Adams",
+    role: "Event Planner",
+    description:
+      "Paul handles the event planning and scheduling, making sure everything runs on time.",
+    image: "/images/img.jpg",
   },
   {
-    name: 'Lisa White',
-    role: 'Volunteer Coordinator',
-    description: 'Lisa coordinates all the volunteers, ensuring everyone knows their roles and responsibilities.',
-    image: '/images/img.jpg'
-  }
+    name: "Lisa White",
+    role: "Volunteer Coordinator",
+    description:
+      "Lisa coordinates all the volunteers, ensuring everyone knows their roles and responsibilities.",
+    image: "/images/img.jpg",
+  },
 ];
 
 const Crew = () => {
@@ -68,17 +75,19 @@ const Crew = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setVisibleCrew((prevVisibleCrew) => {
-        const currentIndex = crewMembers.findIndex(member => member === prevVisibleCrew[0]);
+        const currentIndex = crewMembers.findIndex(
+          (member) => member === prevVisibleCrew[0]
+        );
         const newIndex = (currentIndex + numVisible) % crewMembers.length;
         return crewMembers.slice(newIndex, newIndex + numVisible);
       });
@@ -88,21 +97,33 @@ const Crew = () => {
   }, [numVisible]);
 
   return (
-    <div className="crew-container">
+    <div
+      className="crew-container"
+      style={{
+        background:
+          "linear-gradient(to right, black, #100000 85%, #300000 100%)",
+      }}
+    >
       <h1 className="title">
         <span className="red-text">CREW</span> MEMBERS
       </h1>
       <p className="description">
-        Behind every remarkable TEDx event is a passionate and dedicated team.<br />
-        Working tirelessly to bring ideas to life.
-        Meet the individuals who are making<br />
+        Behind every remarkable TEDx event is a passionate and dedicated team.
+        <br />
+        Working tirelessly to bring ideas to life. Meet the individuals who are
+        making
+        <br />
         TEDxVSSUT 2025 a success.
       </p>
       <div className="slider">
         <div className="slides">
           {visibleCrew.map((member, index) => (
             <div key={index} className="crew-member">
-              <img className="crew-image" src={member.image} alt={member.name} />
+              <img
+                className="crew-image"
+                src={member.image}
+                alt={member.name}
+              />
               <h2 className="crew-name">{member.name}</h2>
               <h3 className="crew-role">{member.role}</h3>
               {member.description && (
@@ -209,4 +230,3 @@ const Crew = () => {
 };
 
 export default Crew;
-
